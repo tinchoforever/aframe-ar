@@ -3,7 +3,7 @@
 Experimenting with AR on the mobile Web using [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
 and [A-Frame](https://aframe.io/), the declarative VR library from Mozilla.
 
-[VIEW DEMO (requires Firefox on Android)](https://autonome.github.io/aframe-ar)
+[VIEW DEMO (requires Firefox on Android)](https://tinchoforever.github.io/aframe-ar)
 
 **How It Works**
 
@@ -19,8 +19,8 @@ Let Apple know that you want a better mobile web on iOS devices by [filing a req
 
 ## Usage
 
-* Install [Firefox on Android from the Play Store](https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en)
-* Open [http://autonome.github.io/aframe-ar](http://autonome.github.io/aframe-a) in Firefox on your phone
+* Install Chrome or Firefox on Android
+* Open [http://tinchoforeverdn                                      .github.io/aframe-ar](http://autonome.github.io/aframe-a) in Chrome or Firefox on your phone
 * Click the button to allow your camera to used
 * Move your phone around until you see the rubber ducky
 
