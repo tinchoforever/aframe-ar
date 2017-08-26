@@ -9,102 +9,57 @@
 
    <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
   <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v1.17.0/dist/aframe-extras.min.js"></script>
+     <link href="camera.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 
-  <script src="camera.js"></script>
-  <style>   
-    
-      html, body, #root, #arVideo {
-        background-color:transparent;
-        height: 100vh;
-        width: 100vw;
-        color: #fff;
-        font-size: 1.6em;
-        text-align: center;
-      }
-      #root {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-      }
-      #arVideo {
-        width: 100%    !important;
-        max-width: 100%    !important;
-        height: auto   !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1000;
-      }
+ 
    
-  </style>   
 </head>
 <body>
   <a-scene>
-
+    
+    <a-assets>
+            <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
+    </a-assets>
+    
 
    
-    <a-camera id="miradas-cam" position="0 0 0">
+    <a-camera id="miradas-cam" position="0 1.8 500" wasd-controls-enabled="false">
+           <a-cursor id="cursor">
+                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation>
+            </a-cursor>
     </a-camera>
 
-    <a-assets>
-      <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
-    </a-assets>
-    <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 12000" rotation="" scale="" visible=""></a-entity>
-    <a-obj-model
-      src="#ducky-obj"
-      position="0 1200 -3000"
-      rotation="-210 -120 180"
-      scale="8 8 8"
-      material="color: orange">
-    </a-obj-model>
-
-    <a-entity  position="0 0 500" rotation="90 0 0" geometry="primitive: circle; radius: 4"
-          material="color: transparent">
+        <a-entity position="0 1.8 500" rotation="90 0 0" geometry="primitive: circle; radius: 3" material="color: transparent">
           
-           <a-animation attribute="rotation"
-               dur="10000"
-               easing="linear"
-               to="90 0 360"
-               repeat="indefinite"></a-animation>
+           <a-animation attribute="rotation" dur="10000" easing="linear" to="90 0 360" repeat="indefinite"></a-animation>
                
-           <a-entity rotation="-90 0 0" position="0 3 -0.5" 
-           geometry="primitive:plane;" material="side: double;shader:gif;src:url(raton.gif);opacity:1">
+       <a-obj-model
+      src="#ducky-obj"
+      position="-10 3 -1" 
+      rotation="-210 -120 180"
+      scale="0.01 0.01 0.01"
+      material="color: orange">
+    
+       <a-animation begin="click" attribute="color" to="blue"></a-animation>
+        <a-animation
+            attribute="rotation"
+            dur="1000"
+            to="360 0 0"
+            repeat="indefinite"
+        ></a-animation>
+        </a-obj-model>
             </a-entity>
-        </a-entity>
-    
-    
+      
   </a-scene>
 
 
-  <video autoplay="true" id="arVideo">
+  <video autoplay="true" id="arVideo"></video>
 
   <div class="coords">
   </div>
 
-  <script type="text/javascript">
-
-    var video = document.querySelector("#arVideo");
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-    if (navigator.getUserMedia) {
-      navigator.getUserMedia({video: true}, handleVideo, videoError);
-    }
-    function handleVideo(stream) {
-      video.src = window.URL.createObjectURL(stream);
-    }
-    function videoError(e) {
-      alert('There was an error trying to get your camera stream :(');
-    }    
-   
-  </script>
+   <script src="camera.js"></script>
 
 </body>
 </html>
