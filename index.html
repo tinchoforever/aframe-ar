@@ -25,8 +25,8 @@
    
     <a-camera id="miradas-cam" position="0 1.8 500" wasd-controls-enabled="false">
            <a-cursor id="cursor" scale="2 2 2">
-                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.3 0.3 0.3" to="1 1 1" dur="250"></a-animation>
-                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.3 0.3 0.3" dur="350"></a-animation>
+                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" scale="2 2 2" to="4 4 4" dur="250"></a-animation>
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="4 4 4" to="2 2 2" dur="350"></a-animation>
             </a-cursor>
     </a-camera>
 
@@ -42,10 +42,18 @@
       material="color: orange">
     
        <a-animation begin="click" attribute="color" to="blue"></a-animation>
+       <a-animation begin="click" begin="5000" attribute="color" to="orange"></a-animation>
         <a-animation begin="click" attribute="scale" 
-        scale="0.01 0.01 0.01"
+        from="0.01 0.01 0.01"
         fill="both"
         to="0.03 0.03 0.03"></a-animation>
+             <a-animation 
+
+             begin="5000"
+             begin="click" attribute="scale" 
+        to="0.01 0.01 0.01"
+        fill="both"
+        from="0.03 0.03 0.03"></a-animation>
 
         <a-animation
             attribute="rotation"
