@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <title>Hello, World! • A-Frame</title>
   <meta name="description" content="Hello, World! • A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+   <script src="aframe.min.js"></script>
 
-   <script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js"></script>
-  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v1.17.0/dist/aframe-extras.min.js"></script>
+    <script src="aframe-gif-shader.min.js"></script>
+    <script src="aframe-extras.min.js"></script>
      <link href="camera.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 
  
@@ -42,15 +41,20 @@
       material="color: orange">
     
        <a-animation begin="click" attribute="color" to="blue"></a-animation>
-       <!-- <a-animation begin="click" begin="5000 "attribute="color" to="blue"></a-animation> -->
-        <a-animation begin="click" attribute="scale" 
-        scale="0.01 0.01 0.01"
-        fill="both"
+       <a-animation begin="click" delay="5000" attribute="color" to="orange"></a-animation>
+        <a-animation begin="click" 
+        attribute="scale" 
+        from="0.01 0.01 0.01"
         to="0.03 0.03 0.03"></a-animation>
+        <a-animation begin="click" 
+        attribute="scale" 
+        delay="5000"
+        to="0.01 0.01 0.01"
+        from="0.03 0.03 0.03"></a-animation>
 
         <a-animation
             attribute="rotation"
-            dur="1000"
+            dur="2500"
             to="360 0 0"
             repeat="indefinite"
         ></a-animation>
