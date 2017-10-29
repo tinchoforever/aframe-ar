@@ -4,17 +4,14 @@
   <meta charset="utf-8">
   <title>Hello, World! • A-Frame</title>
   <meta name="description" content="Hello, World! • A-Frame">
-  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <script src="aframe-gif-shader.min.js"></script>
-    <script src="aframe-extras.min.js"></script>
-     <link href="camera.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
-
- 
-   
+<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>   
 </head>
 <body>
-  <a-scene>
+  <a-scene embedded artoolkit='sourceType: webcam;'>
     
     <a-assets>
             <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
@@ -63,13 +60,6 @@
       
   </a-scene>
 
-
-  <video autoplay="true" id="arVideo"></video>
-
-  <div class="coords">
-  </div>
-
-   <script src="camera.js"></script>
 
 </body>
 </html>
