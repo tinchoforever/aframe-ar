@@ -17,6 +17,45 @@
             <a-asset-item id="ducky-obj" src="gift.obj"></a-asset-item>
     </a-assets>
     
+
+    <a-entity position="0 0 0" particle-system="preset: snow"></a-entity>
+
+    <a-camera id="miradas-cam" position="0 0 0" wasd-controls-enabled="false">
+           
+    </a-camera>
+
+    <!-- <a-entity position="0 0 0" rotation="90 0 0" geometry="primitive: circle; radius: 3" material="color: transparent">
+          
+           <a-animation attribute="rotation" dur="10000" easing="linear" to="90 0 360" repeat="indefinite"></a-animation>
+               
+       <a-obj-model
+      src="#ducky-obj"
+      position="-10 3 -1" 
+      rotation="-210 -120 180"
+      scale="0.005 0.005 0.005"
+      material="color: orange">
+    
+       <a-animation begin="click" attribute="color" to="blue"></a-animation>
+       <a-animation begin="click" delay="5000" attribute="color" to="orange"></a-animation>
+        <a-animation begin="click" 
+        attribute="scale" 
+        from="0.005 0.005 0.005"
+        to="0.01 0.01 0.01"></a-animation>
+        <a-animation begin="click" 
+        attribute="scale" 
+        delay="5000"
+        to="0.01 0.01 0.01"
+        from="0.03 0.03 0.03"></a-animation>
+
+        <a-animation
+            attribute="rotation"
+            dur="2500"
+            to="360 0 0"
+            repeat="indefinite"
+        ></a-animation>
+        </a-obj-model>
+            </a-entity>
+       -->
   </a-scene>
 
   </body>
