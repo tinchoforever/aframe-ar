@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html> 
-  <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello, World! • A-Frame</title>
+  <meta name="description" content="Hello, World! • A-Frame">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>   
+</head>
+<body>
+  <a-scene embedded artoolkit='sourceType: webcam;'>
+    
+    <a-assets>
+            <a-asset-item id="ducky-obj" src="ducky.obj"></a-asset-item>
+    </a-assets>
+    
+
+   
+    <a-camera id="miradas-cam" position="0 1.8 20" wasd-controls-enabled="false">
+           <a-cursor id="cursor" scale="2 2 2">
+                <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" scale="2 2 2" to="4 4 4" dur="250"></a-animation>
+                <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="4 4 4" to="2 2 2" dur="350"></a-animation>
+            </a-cursor>
+    </a-camera>
+       <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
 <a-cube position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-cube>
 <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
 <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+      
+  </a-scene>
+
+
+</body>
 </html>
+
